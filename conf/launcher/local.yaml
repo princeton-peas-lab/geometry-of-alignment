@@ -1,0 +1,4 @@
+# @package _global_
+# Default: Hydra basic launcher (multirun jobs run sequentially in this process).
+defaults:
+  - override /hydra/launcher: basic

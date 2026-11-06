@@ -1,0 +1,4 @@
+dataset_name: strongreject
+dataset_path: data/strongreject.csv
+split: test
+do_eval: true

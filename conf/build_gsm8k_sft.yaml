@@ -1,0 +1,20 @@
+# Teacher answers to the GSM8K train split -> the SFT targets every GSM8K finetune uses.
+defaults:
+  - _self_
+  - dataset: gsm8k
+  - model: llama31-70b-instruct
+
+seed: 42
+overwrite: false               # never silently replace an existing SFT set
+io:
+  output_file: data/gsm8k/llama31-70b-instruct.jsonl
+vllm:
+  tensor_parallel_size: 2       # 70B in bf16 is ~141 GB: two H200s
+  gpu_memory_utilization: 0.9
+  max_model_len: 8192
+sampling:
+  temperature: 0.0              # greedy
+  top_p: 1.0
+  max_tokens: 4096
+runtime:
+  limit: null

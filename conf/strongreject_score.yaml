@@ -1,0 +1,21 @@
+defaults:
+  - _self_
+
+io:
+  input_file: results/safety_eval/generated_responses.json
+  output_file: results/safety_eval/strongreject_scores.json
+
+model:
+  base_model_path: models/gemma-2b
+  adapter_path: models/strongreject-gemma
+
+inference:
+  batch_size: 8
+  max_new_tokens: 1
+  torch_dtype: bfloat16  # float16 | float32 | auto
+  # Truncate assistant text to at most this many judge tokens before templating; null disables.
+  max_response_tokens: 2048
+
+runtime:
+  device: null  # cuda if available, else cpu when null
+  limit: null

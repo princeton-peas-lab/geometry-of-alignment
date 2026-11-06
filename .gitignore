@@ -1,0 +1,79 @@
+# Byte-compiled / caches
+__pycache__/
+*.py[codz]
+*$py.class
+*.so
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Distribution / packaging
+/build/
+dist/
+*.egg-info/
+*.egg
+
+# Environments
+.env
+.envrc
+.venv
+venv/
+ENV/
+
+# Hydra / submitit run dirs
+outputs/
+multirun/
+.submitit/
+
+# Large artifacts (moved in from the source repo; not version-controlled)
+models/
+results/
+logs/
+wandb/
+
+# Caches
+.uv-cache/
+.hf_datasets_cache/
+.cache/
+
+# Lockfile (regenerate with uv)
+uv.lock
+
+# Generated analysis outputs
+analysis/**/results/
+.pytest_hf_home/
+
+# TensorBoard event files from training runs.
+runs/
+
+# Paper figure sources and outputs (not part of the release).
+/figures/
+
+# data/: only the small non-Hugging-Face datasets are tracked (sources in data/README.md);
+# the HF sets (alpaca, samsum, gsm8k's own splits) are downloaded into data/.
+/data/*
+!/data/README.md
+!/data/advbench.csv
+!/data/strongreject.csv
+!/data/xstest.csv
+!/data/emergent_misalignment/
+/data/emergent_misalignment/*
+!/data/emergent_misalignment/bad_medical_advice.jsonl
+!/data/emergent_misalignment/risky_financial_advice.jsonl
+!/data/refusal/
+/data/refusal/*
+!/data/refusal/harmful_train.json
+!/data/refusal/harmful_val.json
+!/data/refusal/harmful_test.json
+!/data/refusal/harmless_train.json
+!/data/refusal/harmless_val.json
+!/data/refusal/harmless_test.json
+!/data/gsm8k/
+/data/gsm8k/*
+!/data/gsm8k/llama31-70b-instruct.jsonl
+
+# trak/: vendored MadryLab TRAK; only the fast_jl CUDA projector is used.
+/trak/*
+!/trak/fast_jl/
+!/trak/LICENSE
+!/trak/README.md

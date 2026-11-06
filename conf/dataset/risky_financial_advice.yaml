@@ -1,0 +1,4 @@
+dataset_name: risky_financial_advice
+dataset_path: data/emergent_misalignment/risky_financial_advice
+split: train
+do_eval: true

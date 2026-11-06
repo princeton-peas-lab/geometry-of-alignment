@@ -1,0 +1,10 @@
+short_name: Qwen3.5-9B-Instruct
+# Text-only extraction of the published VLM download (models/qwen35-9b-instruct).
+# The download is a Qwen3_5ForConditionalGeneration checkpoint whose keys live under
+# `model.language_model.*`; Qwen3_5ForCausalLM has no conversion mapping for that, so
+# loading the raw directory silently random-initializes every tensor.
+# Rebuild with: python scripts/extract_text_checkpoint.py \
+#     models/qwen35-9b-instruct models/qwen35-9b-instruct-text
+model_name_or_path: models/qwen35-9b-instruct-text
+decoder_layers_attr: model.layers
+key: qwen35-9b-instruct

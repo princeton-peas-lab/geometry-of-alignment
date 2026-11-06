@@ -1,0 +1,28 @@
+# WildGuard guard labeling (api | offline_vllm backend).
+defaults:
+  - _self_
+  - guard_model: wildguard
+
+backend: offline_vllm  # api | offline_vllm
+
+io:
+  input_file: results/safety_eval/generated_responses.json
+  output_file: results/safety_eval/guard_labels.json
+
+api:
+  api_base: http://localhost:8000/v1
+  api_key: EMPTY
+
+sampling:
+  temperature: 0.0
+  top_p: 1.0
+  max_tokens: 256
+
+vllm:
+  tensor_parallel_size: 1
+  gpu_memory_utilization: 0.9
+  max_model_len: null
+
+runtime:
+  timeout: 120.0
+  limit: null

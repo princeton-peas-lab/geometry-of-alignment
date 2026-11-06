@@ -1,0 +1,5 @@
+dataset_name: gsm8k
+dataset_path: data/gsm8k
+sft_jsonl: data/gsm8k/llama31-70b-instruct.jsonl
+split: train
+do_eval: true

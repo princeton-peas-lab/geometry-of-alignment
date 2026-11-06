@@ -1,0 +1,6 @@
+dataset_name: refusal
+dataset_path: data/refusal
+subset: harmful
+variant: llama32-3b-instruct
+split: train
+do_eval: true

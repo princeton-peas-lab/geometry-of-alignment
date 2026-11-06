@@ -1,0 +1,6 @@
+# Representation FIM subspace finetuning experiment. Learning-rate map matches default.
+defaults:
+  - default
+  - _self_
+
+name: finetune_repr_fim_subspace

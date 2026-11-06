@@ -1,0 +1,9 @@
+# Keys under `lr` must match model config `key` fields (stems of conf/model/*.yaml).
+# The paper's fp32 learning rates (scripts/reproduce/env.sh FP32_LR). For the 9B, 2e-5 is the
+# largest rate in {1e-4, 5e-5, 3e-5, 2e-5, 1e-5} at which no dataset collapses into repetitive
+# generation.
+name: default
+lr:
+  llama32-3b-instruct: 5.0e-5
+  qwen3-4b-instruct: 1.0e-4
+  qwen35-9b-instruct: 2.0e-5

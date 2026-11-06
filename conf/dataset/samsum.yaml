@@ -1,0 +1,4 @@
+dataset_name: samsum
+dataset_path: data/samsum
+split: train
+do_eval: true

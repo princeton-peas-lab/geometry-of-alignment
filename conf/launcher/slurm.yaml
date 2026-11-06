@@ -1,0 +1,21 @@
+# @package _global_
+# Submit each (multirun) job as a SLURM job via the Hydra submitit launcher.
+# Requires: pip install hydra-submitit-launcher
+# Set partition / account / resources / setup for your cluster.
+defaults:
+  - override /hydra/launcher: submitit_slurm
+
+hydra:
+  launcher:
+    partition: null           # your cluster's GPU partition (null = cluster default)
+    timeout_min: 55           # <= 1 h gets a high-priority test QOS on many clusters
+    nodes: 1
+    tasks_per_node: 1
+    cpus_per_task: 8
+    gpus_per_node: 1
+    mem_gb: 180
+    # Cap concurrent array tasks.
+    array_parallelism: 8
+    setup: []                 # shell lines run before each job, e.g. module loads
+    additional_parameters:
+      mail-type: FAIL

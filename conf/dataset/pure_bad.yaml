@@ -1,0 +1,4 @@
+dataset_name: pure_bad
+dataset_path: data/pure_bad_100.jsonl
+split: train
+do_eval: false

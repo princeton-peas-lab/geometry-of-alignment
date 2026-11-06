@@ -1,0 +1,18 @@
+# @package _global_
+# The paper's finetuning protocol (Table 1 and the intervention figure): fp32 weights and
+# compute, the first 100 training rows, 1 epoch, batch 2 x grad-accum 2, AdamW beta2 0.999,
+# linear LR with no warmup (the train_args defaults), each model's LR from
+# conf/experiment/default.yaml, and the held-out loss as the post-train eval (for GSM8K: the
+# held-out 5% of the teacher answers). Training seeds 42/1/2 are a sweep axis. Applied via
+# `+sweep=paper_fp32`; the grid axes come from the command line (Makefile `paper-fp32`).
+#
+# This trains and evaluates loss only. The paper's safety numbers (responses to the refusal
+# harmful-test prompts, WildGuard refusal and StrongREJECT) come from scripts/reproduce/,
+# which also runs the 9B (2 GPUs, FSDP2).
+max_samples: 100
+
+train_args:
+  bf16: false
+
+evaluate:
+  mode: loss

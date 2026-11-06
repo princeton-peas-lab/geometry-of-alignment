@@ -1,0 +1,4 @@
+short_name: LLaMA-3.2-3B-Instruct
+model_name_or_path: models/llama32-3b-instruct
+decoder_layers_attr: model.layers
+key: llama32-3b-instruct

@@ -1,0 +1,4 @@
+dataset_name: alpaca
+dataset_path: data/alpaca
+split: train
+do_eval: true

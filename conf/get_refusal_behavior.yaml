@@ -1,0 +1,36 @@
+# Sequential vLLM pipeline: base refusal prompts -> policy responses -> WildGuard labels
+# -> refusal-only JSON. policy is unloaded before WildGuard loads.
+# `_self_` last so this overrides dataset/refusal.yaml (variant must be null).
+defaults:
+  - dataset: refusal
+  - model: llama32-3b-instruct
+  - guard_model: wildguard
+  - _self_
+
+dataset:
+  subset: harmful
+  split: train
+  variant: null
+
+vllm:
+  tensor_parallel_size: 1
+  gpu_memory_utilization: 0.9
+  max_model_len: null
+  additional_config: null
+
+policy_sampling:
+  temperature: 0.0
+  top_p: 1.0
+  max_tokens: 2048
+
+guard_sampling:
+  temperature: 0.0
+  top_p: 1.0
+  max_tokens: 256
+
+runtime:
+  limit: null
+
+output:
+  variant_slug: llama32-3b-instruct
+  output_file: null

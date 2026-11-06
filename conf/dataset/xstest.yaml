@@ -1,0 +1,4 @@
+dataset_name: xstest
+dataset_path: data/xstest.csv
+split: test
+do_eval: true

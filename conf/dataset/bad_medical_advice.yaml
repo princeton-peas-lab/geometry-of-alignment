@@ -1,0 +1,4 @@
+dataset_name: bad_medical_advice
+dataset_path: data/emergent_misalignment/bad_medical_advice
+split: train
+do_eval: true

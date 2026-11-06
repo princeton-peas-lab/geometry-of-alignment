@@ -1,0 +1,5 @@
+short_name: Qwen3-4B-Instruct
+model_name_or_path: models/qwen3-4b-instruct
+# Where the stack of decoder blocks lives on the loaded HF module (most CausalLMs: model.layers).
+decoder_layers_attr: model.layers
+key: qwen3-4b-instruct
